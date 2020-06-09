@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="yandex-verification" content="c3db5e8f304c8fec" />
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	<meta charset="utf-8">
+	<meta name = "viewport" content = "width=device-width, minimum-scale=1, maximum-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<title>Shara - Бурение скважин</title>
+
+	<meta name = "apple-mobile-web-app-capable" content = "yes" /> 
+			
+		<!-- jQuery library -->
+		<script type="text/javascript" src = "js/jquery-1.4.min.js"></script>
+		<script src = "js/jquery.easing-1.3.js"></script>
+		
+		<!-- iosSlider plugin -->
+		<script src = "js/jquery.iosslider.js"></script>
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+		
+				$('.iosSlider').iosSlider({
+					desktopClickDrag: true,
+					snapToChildren: true,
+					infiniteSlider: true,
+					snapSlideCenter: true,
+					navSlideSelector: '.sliderContainer .slideSelectors .item',
+					navPrevSelector: '.sliderContainer .slideSelectors .prev',
+					navNextSelector: '.sliderContainer .slideSelectors .next',
+					onSlideComplete: slideComplete,
+					onSliderLoaded: sliderLoaded,
+					onSlideChange: slideChange,
+					autoSlide: true,
+					scrollbar: true,
+					scrollbarContainer: '.sliderContainer .scrollbarContainer',
+					scrollbarMargin: '0',
+					scrollbarBorderRadius: '0',
+					keyboardControls: true
+				});
+			
+			});
+			
+			function slideChange(args) {
+						
+				$('.sliderContainer .slideSelectors .item').removeClass('selected');
+				$('.sliderContainer .slideSelectors .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
+			
+			}
+			
+			function slideComplete(args) {
+				
+				if(!args.slideChanged) return false;
+					
+				$(args.sliderObject).find('.text1, .text2').attr('style', '');
+				
+				$(args.currentSlideObject).find('.text1').animate({
+					left: '30px',
+					opacity: '0.8'
+				}, 700, 'easeOutQuint');
+				
+				$(args.currentSlideObject).find('.text2').delay(200).animate({
+					left: '30px',
+					opacity: '0.8'
+				}, 600, 'easeOutQuint');
+				
+			}
+			
+			function sliderLoaded(args) {
+					
+				$(args.sliderObject).find('.text1, .text2').attr('style', '');
+				
+				$(args.currentSlideObject).find('.text1').animate({
+					left: '30px',
+					opacity: '0.8'
+				}, 700, 'easeOutQuint');
+				
+				$(args.currentSlideObject).find('.text2').delay(200).animate({
+					left: '30px',
+					opacity: '0.8'
+				}, 600, 'easeOutQuint');
+				
+				slideChange(args);
+				
+			}
+
+		</script>
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="header">
+			<div class="header_1">
+				<h1 style="font-size: 21pt;">Shara - бурение скважин</h1>
+			</div>
+			<div class="menu">
+			    <div class="menu__icon">
+			      <span></span>
+			      <span></span>
+			      <span></span>
+			      <span></span>
+			    </div>
+			  
+			    <div class="menu__links">
+			        <a href="#info" class="menu__links-item">Услуги</a>
+			        <a href="#cena" class="menu__links-item">Цены</a>
+			        <a href="#stats" class="menu__links-item">Статистика</a>
+			        <a href="#contacts" class="menu__links-item">Контакты</a>			        
+			    </div>
+			</div>
+			<div class="menu menu_state_open" style="display: none;">
+			    <div class="menu__icon">
+			      <span></span>
+			      <span></span>
+			      <span></span>
+			      <span></span>
+			    </div>
+			 </div>
+		</div>
+
+		<div class="content">
+			<section class = 'iosSliderDemo'>	
+				<div class = 'fluidHeight'>				
+					<div class = 'sliderContainer'>				
+						<div class = 'iosSlider'>			
+							<div class = 'slider'>						
+								<div class = 'item item1'>
+									<div class = 'inner'>
+										<img src = 'img/h-slider_1.jpg' />
+
+										<div class = 'selectorShadow'></div>
+										
+										<div class = 'text1'><span>БУРЕНИЕ СКВАЖИН В КИЕВЕ И ОБЛАСТИ</span></div>
+							
+										<div class = 'text2'><span>Более 5-и лет наша буровая компания осуществляет услуги "бурение скважин на воду", как в Киеве, так и по всем регионам киевской области.</span></div>
+									</div>
+								</div>							
+								<div class = 'item item2'>
+									<div class = 'inner'>
+										<img src = 'img/h-slider_2.jpg' />
+										
+										<div class = 'selectorShadow'></div>
+										
+										<div class = 'text1'><span>БУРЕНИЕ СКВАЖИН НА ВОДУ</span></div>
+							
+										<div class = 'text2'><span>Мы стараемся создать выгодные условия сотрудничества для Вас. Доступная цена на материалы и лояльная стоимость услуг.</span></div>
+									</div>
+								</div>							
+								<!-- <div class = 'item item3'>
+									<div class = 'inner'>
+										<img src = 'img/h-slider_3.jpg' />
+										
+										<div class = 'selectorShadow'></div>
+										
+										<div class = 'text1'><span>Responsive</span></div>
+							
+										<div class = 'text2'><span>Works with the most dynamic desktop<br />and mobile web applicaitons.</span></div>
+									</div>
+								</div>	 -->						
+								<div class = 'item item4'>
+									<div class = 'inner'>
+										<img src = 'img/h-slider_4.jpg' />
+										
+										<div class = 'selectorShadow'></div>
+										
+										<div class = 'text1'><span>БУРЕНИЕ СКВАЖИН ПОД КЛЮЧ</span></div>
+							
+										<div class = 'text2'><span>Бурение скважины под ключ с нуля любой сложности.</span></div>
+									</div>
+								</div>							
+								<div class = 'item item5'>
+									<div class = 'inner'>
+										<img src = 'img/h-slider_5.jpg' />
+										
+										<div class = 'selectorShadow'></div>
+										
+										<div class = 'text1'><span>РЕМОНТ КВАРТИР, ДОМОВ ПОД КЛЮЧ И ТД.</span></div>
+							
+										<div class = 'text2'><span>В наши услуги входит ремонт квартир, домов, крыш и тд.</span></div>
+									</div>
+								</div>
+						
+							</div>					
+						</div>					
+						<div class = 'slideSelectors'>
+							
+							<div class = 'prev'></div>
+							
+							<div class = 'item selected'></div>
+							
+							<div class = 'item'></div>
+							
+							<!-- <div class = 'item'></div> -->
+							
+							<div class = 'item'></div>
+							
+							<div class = 'item'></div>
+							
+							<div class = 'next'></div>					
+						</div>					
+						<div class = 'scrollbarContainer'></div>					
+					</div>			
+				</div>		
+			</section>
+			<div class="content_2" id="info">
+				<h1 class="h1_content_2">Наши услуги</h1>
+				<span class="span">Компания выполняет бурение скважин под ключ любого типа сложности, а также предоставляет услуги по обустройству скважин. Наши мастера, которые качественно выполняют буровые работы, имеют буровой стаж 5-15 лет и хорошо осведомлены в геологии Киевской области и прилегающих областях, умеют эффективно и на высоком уровне бурить скважины на воду.</span>
+			</div>
+			<div class="content_img">
+				<div class="content_img_1">
+					<div class="block_img">
+						<h2 class="img_h2">Бурение артезианской скважины</h2>
+						<img src="img/bas.jpg">
+					</div>
+					<div class="block_img">
+						<h2 class="img_h2">Бурение по гранитам</h2>
+						<img src="img/1d22a3cd8eabb504bcfd8ee10bf555ec.jpg">
+					</div>
+					<div class="block_img">
+						<h2 class="img_h2">Бурение скважины под ключ</h2>
+						<img src="img/6dce776e0a3d8860cafe19c969aa9465.jpg">
+					</div>
+				</div>
+				<div class="content_img_2">
+					<div class="block_img">
+						<h2 class="img_h2">Бурение скважины в 1 колонну</h2>
+						<img src="img/Бурение-скважин-на-воду2-1.jpg">
+					</div>
+					<div class="block_img">
+						<h2 class="img_h2">Бурение скважины в 2 колонны</h2>
+						<img src="img/520104.png">
+					</div>
+					<div class="block_img">
+						<h2 class="img_h2">Ремонт скважин</h2>
+						<img src="img/3f6f0ecabf76d5edfb09128cce221944.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="content_3" id="cena">
+				<h2 style="margin-top: 50px; margin-bottom: 10px; text-shadow: black 0 0 2px;">Бурение скважин - Цена на 2020 год.</h2>
+				<span style="width: 65%; margin-bottom: 50px; text-shadow: black 0 0 2px;">Ориентировочная цена бурения скважины (метра погонного) находится в пределах от 290 до 470 гривен при условии использования нПВХ трубы ⌀125мм. Если же вы желаете узнать точную стоимость скважины в вашем районе при необходимом её дебите (производительности м3/ч), то здесь следует отталкиваться от глубины скважины, используемых материалов и требуемой конструкции скважины (в одну колонну, в две, артезианская скважина).</span>
+				<div class="content_3_1">
+						<div class="content_3_block">
+							<span class="span_padding">⌀ 50ММ</span>
+							<div class="content_block">
+								<span><p class="first_p"><b>Цена договорная </b></p>за пог. метр</span>
+								<span>⌀ трубы 50 мм.</span>
+								<span>нПВХ труба на резьбовом <br>соединении</span>
+								<span>Материал колонны ПЭ 10 атм.</span>
+								<span>Верховодка, Полтавский горизонт</span>
+								<span>Срок работ: 1 день.</span>
+							</div>
+							<a href="#contacts" class="a_content">Уточнить стоимость</a>
+						</div>
+						<div class="content_3_block">
+							<span class="span_padding">⌀ 125ММ</span>
+							<div class="content_block">
+								<span><p class="first_p"><b>Цена договорная </b></p>за пог. метр</span>
+								<span>⌀ трубы 125 мм.</span>
+								<span>нПВХ труба на резьбовом <br>соединении</span>
+								<span>Материал колонны ПЭ 10 атм.</span>
+								<span>Верховодка, Полтавский горизонт</span>
+								<span>Срок работ: 1-3 дня.</span>
+							</div>
+							<a href="#contacts" class="a_content">Уточнить стоимость</a>
+						</div>
+						<div class="content_3_block">
+							<span class="span_padding">⌀ 140ММ</span>
+							<div class="content_block">
+								<span><p class="first_p"><b>Цена договорная </b></p>за пог. метр</span>
+								<span>⌀ трубы 140 мм.</span>
+								<span>нПВХ труба на резьбовом <br>соединении</span>
+								<span>Материал колонны ПЭ 10 атм.</span>
+								<span>Верховодка, Полтавский горизонт</span>
+								<span>Срок работ: 1-4 дня.</span>
+							</div>
+							<a href="#contacts" class="a_content">Уточнить стоимость</a>
+						</div>
+						<div class="content_3_block">
+							<span class="span_padding">⌀ 160ММ</span>
+							<div class="content_block">
+								<span><p class="first_p"><b>Цена договорная </b></p>за пог. метр</span>
+								<span>⌀ трубы 160 мм.</span>
+								<span>нПВХ труба на резьбовом <br>соединении</span>
+								<span>Материал колонны ПЭ 10 атм.</span>
+								<span>Верховодка, Полтавский горизонт</span>
+								<span>Срок работ: 1-5 дня.</span>
+							</div>
+							<a href="#contacts" class="a_content">Уточнить стоимость</a>
+					</div>
+				</div>
+				<span class="last_span">Формула расчета стоимости бурения скважины проста – цена за 1 метр пог. умножается на необходимую глубину скважины. Сколько может составлять глубина скважины? В основном для Киевской области: от 45 до 110 метров. Более точная глубина зависит от геологических особенностей района Вашей области. Стоимость бурения скважины в первую очередь зависит от её глубины. Уточняйте необходимую глубину скважины у наших специалистов.</span>
+			</div>
+			<!-- <div class="content_4">
+				<div class="content_4_block">
+					<img src="img/h-slider_5.jpg" class="img_c4">
+					<h2 class="h2_c4">lorem</h2>
+					<span class="span_c4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur.</span>
+					<a href="#" class="button7">Подробнее</a>
+				</div>
+				<div class="content_4_block">
+					<img src="img/h-slider_4.jpg" class="img_c4">
+					<h2 class="h2_c4">lorem</h2>
+					<span class="span_c4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur.</span>
+					<a href="#" class="button7">Подробнее</a>
+				</div>
+				<div class="content_4_block">
+					<img src="img/h-slider_1.jpg" class="img_c4">
+					<h2 class="h2_c4">lorem</h2>
+					<span class="span_c4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur.</span>
+					<a href="#" class="button7">Подробнее</a>
+				</div>
+			</div> -->
+			<div class="content_5" id="stats">
+				<h2>Немного статистики о нашей работе</h2>
+				<div class="row">
+					<div class="block_c5">
+						<img src="img/like.png" class="img_c5">
+						<h2 class="h2_c5">428</h2>
+						<span class="span_c5">Пробурено скважин <br>(всего)</span>
+					</div>
+					<div class="block_c5">
+						<img src="img/check.png" class="img_c5">
+						<h2 class="h2_c5">72</h2>
+						<span class="span_c5">Пробурено скважин <br>(за 2019 год)</span>
+					</div>
+					<div class="block_c5">
+						<img src="img/home.png" class="img_c5">
+						<h2 class="h2_c5">175</h2>
+						<span class="span_c5">Обслужено объектов</span>
+					</div>
+					<div class="block_c5">
+						<img src="img/height.png" class="img_c5">
+						<h2 class="h2_c5">167</h2>
+						<span class="span_c5">Макс. глубина <br>(метров)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content_6">
+			<h2 class="h2_c6">Мы используем качественное оборудование</h2>
+			<span class="span_c6">Насосное оборудование, Обсадные трубы нПВХ, Насосы для скважины, Фильтра должны быть соответствующего качества для долгосрочной и стабильной работы Вашей скважины. Мы используем оборудование таких производителей как: Grundfos, Pedrollo, Needle, Wilo, Reflex, Водолей</span>
+			<div class="div_img_c6">
+				<img src="img/log1.jpg" class="img_c6">
+				<img src="img/log2.jpg" class="img_c6">
+				<img src="img/log3.jpg" class="img_c6">
+				<img src="img/log4.jpg" class="img_c6">
+				<img src="img/log5.jpg" class="img_c6">
+			</div>
+		</div>
+		<div class="contacts">
+			<div class="contacts_div" id="contacts">
+				<div class="contacts_block_1">
+					<span>КОНТАКТНАЯ ИНФОРМАЦИЯ</span>
+					<span><br>E-mail : shara.kodaki@gmail.com</span>
+					<span><br>Тел : +380 (98) 599-86-09</span>
+					<span><br>Тел : +380 (68) 764-95-16</span>
+					<span><br>Тел : +380 (66) 461-98-83</span>
+					<span><br>Тел : +380 (63) 469-72-05</span>
+					<span><br>Украина, Киевская обл., г.Васильков</span>
+				</div>
+				<div class="contacts_block_2">
+					<span>РАБОТАЕМ ДЛЯ ВАС</span>
+					<br>Пн-Пт: 8:00 до 20:00
+					<br>Сб- Вск: По договорённости
+					<br>Поддержка: Каждый день.
+					<span><br>Всегда надеемся на результат <br>плодотворного сотрудничества!</span>
+					<span><br>Ждем Вашего звонка и новых<br> заказов.</span>
+					<span><br>Спасибо за внимание!</span>
+				</div>
+			</div>
+			<div class="contacts_div_2">
+				<div class="footer">
+					<span>Shara © 2020 - Бурение скважин.</span>
+					<div class="a_footer">
+						<a href="#info">О компании</a>
+						<a href="#contacts">Контакты</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
